@@ -26,6 +26,7 @@ pipeline {
         stage ("pull it now") {
             steps {
                 sh 'docker pull "$IMAGE:$TAG"'
+                sh 'docker rm -f final || true'
                 sh 'docker run -d --name final -p 5001:5000 "$IMAGE:$TAG"'
             }
         }
