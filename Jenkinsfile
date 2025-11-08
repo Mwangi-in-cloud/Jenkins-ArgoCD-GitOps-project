@@ -12,7 +12,7 @@ pipeline {
         }
         stage ("now building") {
             steps {
-                sh 'docker build -t $IMAGE:$TAG'
+                sh 'docker build -t $IMAGE:$TAG .'
             }
         }
     }
