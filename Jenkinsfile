@@ -7,7 +7,7 @@ pipeline {
     stages{
         stage (checking out ) {
             steps {
-                echo "cheking out"
+                git branch: 'main', credentialsId: 'github-creds', url: 'https://github.com/Mwangi-in-cloud/Jenkins-ArgoCD-GitOps-project.git'
             }
         }
     }
