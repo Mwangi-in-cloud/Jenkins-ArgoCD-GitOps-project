@@ -18,7 +18,7 @@ pipeline {
         stage ("trivy scan") {
             steps {
                 sh """
-                  //trivy image --severity HIGH,CRITICAL --no-progress --format table -o trivy-scan-report.txt ${IMAGE}:${TAG}
+                  ##trivy image --severity HIGH,CRITICAL --no-progress --format table -o trivy-scan-report.txt ${IMAGE}:${TAG}
                   trivy --severity HIGH,CRITICAL --skip-update --no-progress image --format table -o trivy-scan-report.txt ${IMAGE}:${TAG}
                 """
             }
