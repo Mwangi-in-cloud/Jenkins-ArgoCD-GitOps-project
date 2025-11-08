@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 ## installing depenndencies
-RUN pip install --nocache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 ## now copying the files to be built
 COPY app.py .
