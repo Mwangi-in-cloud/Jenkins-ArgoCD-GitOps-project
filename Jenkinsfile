@@ -15,7 +15,7 @@ pipeline {
                 sh 'docker build -t "$IMAGE:$TAG" .'
             }
         }
-        stage (now pushing sir) {
+        stage ("now pushing sir") {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github-creds', passwordVariable: 'DOCKERHUB_PWD', usernameVariable: 'DOCKERHUB_USER')]) {   
                 sh 'echo "DOCKERHUB_PWD" | docker login -u "$DOCKERHUB_USER" --password0-stdin'
