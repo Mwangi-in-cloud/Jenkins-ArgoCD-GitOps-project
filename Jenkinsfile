@@ -15,6 +15,11 @@ pipeline {
                 sh 'docker build -t "$IMAGE:$TAG" .'
             }
         }
+        stage ("trivy scan") {
+            steps {
+                sh 'trivy --severity HIGH,CRITICAL --no-progress image --format table -o trivy-scan-report.txt "$IMAGE:$TAG"'
+            }
+        }
         stage ("now pushing sir") {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-creds', passwordVariable: 'DOCKERHUB_PWD', usernameVariable: 'DOCKERHUB_USER')]) {   
