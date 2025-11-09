@@ -8,4 +8,4 @@ spec:
     app: bank
   ports:
   - port: 80  #this is for the service
-    targetPort: 80 #this is for the container port.
+    targetPort: 5000 #this is for the container port.
