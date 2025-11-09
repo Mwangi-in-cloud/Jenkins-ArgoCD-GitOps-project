@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE = "docker.io/cronosm4m/pipeline"
+        IMAGE = "docker.io/cronosm4m/nileproj"
         TAG = "${env.BUILD_NUMBER}"
     }
     stages{

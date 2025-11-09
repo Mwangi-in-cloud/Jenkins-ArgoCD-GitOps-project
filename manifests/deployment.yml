@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: cont1
-        image: cronosm4m/pipeline:latest
+        image: cronosm4m/nileproj:latest
