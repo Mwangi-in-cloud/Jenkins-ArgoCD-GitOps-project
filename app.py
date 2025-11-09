@@ -4,7 +4,7 @@ app = Flask(__name__)
 @app.get("/")
 def hello():
     return jsonify(
-        message="✨ THIS IS DEVOPS VERSION 2 NOW !!!! ✨",
+        message="✨ THIS IS DEVOPS FULLY FLEDGED TO ARGOCD !!!! ✨",
         tip="Built with Flask, shipped by Jenkins, running in Docker."
     )
 
