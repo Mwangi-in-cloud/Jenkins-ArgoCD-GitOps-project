@@ -41,10 +41,11 @@ pipeline {
         stage ("now to CD part") {
             steps {
                 sh '''
-				echo 'installing Kubectl & ArgoCD cli...'
-				curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-				chmod +x kubectl
-				sudo mv kubectl /usr/local/bin/kubectl
+				  mkdir -p $HOME/bin
+                 curl -LO https://dl.k8s.io/release/v1.34.1/bin/linux/amd64/kubectl
+                 chmod +x kubectl
+                 mv kubectl $HOME/bin/
+                 export PATH=$HOME/bin:$PATH
 				curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 				chmod +x /usr/local/bin/argocd
 				'''
