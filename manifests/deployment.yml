@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: cont1
-        image: cronosm4m/loans-image
+        image: cronosm4m/pipeline:latest
