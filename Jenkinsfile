@@ -40,15 +40,7 @@ pipeline {
         }
         stage ("now to CD part") {
             steps {
-                sh '''
-				  mkdir -p $HOME/bin
-                 curl -LO https://dl.k8s.io/release/v1.34.1/bin/linux/amd64/kubectl
-                 chmod +x kubectl
-                 mv kubectl $HOME/bin/
-                 export PATH=$HOME/bin:$PATH
-				curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
-				chmod +x /usr/local/bin/argocd
-				'''
+                echo "already installed ..... skipping"
             }
         }
         stage ("applying manifests and sync argo") {
